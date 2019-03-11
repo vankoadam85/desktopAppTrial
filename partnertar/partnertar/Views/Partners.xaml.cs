@@ -17,9 +17,9 @@ namespace partnertar.Views
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Partners : Window
     {
-        public Window1()
+        public Partners()
         {
             InitializeComponent();
         }
