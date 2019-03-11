@@ -1,4 +1,5 @@
-﻿using System;
+﻿using partnertar.ViewModels.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,17 +12,26 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Unity;
 
 namespace partnertar.Views
 {
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Partners : Window
+    public partial class PartnersWindow : Window
     {
-        public Partners()
+        private readonly IPartnersViewModel _viewModel;
+
+        public PartnersWindow()
         {
             InitializeComponent();
+        }
+
+        [InjectionConstructor]
+        public PartnersWindow(IPartnersViewModel viewModel) : this()
+        {
+            _viewModel = viewModel;
         }
     }
 }
