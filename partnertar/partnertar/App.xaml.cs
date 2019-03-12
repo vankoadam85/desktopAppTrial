@@ -1,6 +1,7 @@
 ﻿using partnertar.Data_Access;
 using partnertar.Data_Access.Interfaces;
 using partnertar.ViewModels;
+using partnertar.Views;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -23,6 +24,10 @@ namespace partnertar
         {
             _container = new UnityContainer();
             _container.RegisterType<IPartnersDataAccess, PartnersDataAccess>();
+            _container.RegisterType<PartnersViewModel>();
+
+            _container.Resolve<PartnersWindow>();
+            _container.Resolve<PartnersViewModel>();
         }
     }
 }

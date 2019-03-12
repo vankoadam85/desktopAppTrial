@@ -11,18 +11,18 @@ namespace partnertar.ViewModels
 {
     public class PartnersViewModel
     {
-        [Dependency]
         public IPartnersDataAccess DataAccess { get; set; }
         public List<Partner> Partners { get; set; }
 
-        public PartnersViewModel()
+        public PartnersViewModel(IPartnersDataAccess dataAccess)
         {
-            Partners = (List<Partner>)GetPartners();
+            DataAccess = dataAccess;
+            Partners = GetPartners();
         }
 
-        public IEnumerable<Partner> GetPartners()
+        public List<Partner> GetPartners()
         {
-            return DataAccess.GetAll();
+            return (List<Partner>)DataAccess.GetAll();
         }
     }
 }

@@ -21,11 +21,12 @@ namespace partnertar.Views
     /// </summary>
     public partial class PartnersWindow : Window
     {
+        public PartnersViewModel ViewModel { get; set; }
 
         public PartnersWindow()
         {
             InitializeComponent();
-            DataContext = new PartnersViewModel();
+            DataContext = ViewModel;
             BindToViewModel();
         }
 
