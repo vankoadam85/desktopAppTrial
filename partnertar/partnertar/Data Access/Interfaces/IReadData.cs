@@ -8,8 +8,8 @@ namespace partnertar.Data_Access.Interfaces
 {
     public interface IReadData<T> where T : class
     {
-        T GetByID(long ID);
+        Task<T> GetByIDAsync(long ID);
 
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
     }
 }

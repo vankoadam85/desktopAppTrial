@@ -12,17 +12,17 @@ namespace partnertar.ViewModels
     public class PartnersViewModel
     {
         public IPartnersDataAccess DataAccess { get; set; }
-        public List<Partner> Partners { get; set; }
+        public IEnumerable<Partner> Partners { get; set; }
 
         public PartnersViewModel(IPartnersDataAccess dataAccess)
         {
             DataAccess = dataAccess;
-            Partners = GetPartners();
+            Partners = GetPartnersAsync().Result;
         }
 
-        public List<Partner> GetPartners()
+        public async Task<IEnumerable<Partner>> GetPartnersAsync()
         {
-            return (List<Partner>)DataAccess.GetAll();
+            return await DataAccess.GetAllAsync();
         }
     }
 }
