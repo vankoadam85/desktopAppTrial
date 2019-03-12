@@ -1,5 +1,4 @@
 ﻿using partnertar.Models;
-using partnertar.ViewModels.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace partnertar.ViewModels
 {
-    class PartnersViewModel : IPartnersViewModel
+    public class PartnersViewModel
     {
-        public IEnumerable<Partner> Partners { get; set; }
+        public List<Partner> Partners { get; set; }
     }
 }

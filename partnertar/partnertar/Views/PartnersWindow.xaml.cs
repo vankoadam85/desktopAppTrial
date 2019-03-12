@@ -1,4 +1,4 @@
-﻿using partnertar.ViewModels.Interfaces;
+﻿using partnertar.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,21 +17,25 @@ using Unity;
 namespace partnertar.Views
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for PartnersWindow.xaml
     /// </summary>
     public partial class PartnersWindow : Window
     {
-        private readonly IPartnersViewModel _viewModel;
 
         public PartnersWindow()
         {
             InitializeComponent();
+            DataContext = new PartnersViewModel();
+            BindToViewModel();
         }
 
-        [InjectionConstructor]
-        public PartnersWindow(IPartnersViewModel viewModel) : this()
+        private void BindToViewModel()
         {
-            _viewModel = viewModel;
+            Binding partnersBinding = new Binding("Partners")
+            {
+                Source = DataContext
+            };
+            partnersList.SetBinding(DataGrid.ItemsSourceProperty, partnersBinding);
         }
     }
 }

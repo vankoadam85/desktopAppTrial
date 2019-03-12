@@ -68,7 +68,6 @@
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\Partner.cs" />
     <Compile Include="Models\PrivatePerson.cs" />
-    <Compile Include="ViewModels\Interfaces\IPartnersViewModel.cs" />
     <Compile Include="ViewModels\PartnersViewModel.cs" />
     <Compile Include="Views\PartnersWindow.xaml.cs">
       <DependentUpon>PartnersWindow.xaml</DependentUpon>

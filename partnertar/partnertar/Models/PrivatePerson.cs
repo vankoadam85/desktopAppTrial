@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace partnertar.Models
 {
-    class PrivatePerson : Partner
+    public class PrivatePerson : Partner
     {
         public DateTime BirthDate { get; set; }
         public string BirthLocation { get; set; }

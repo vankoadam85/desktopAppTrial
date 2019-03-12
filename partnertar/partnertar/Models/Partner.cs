@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace partnertar.Models
 {
-    abstract class Partner
+    public abstract class Partner
     {
         public string Name { get; set; }
         public string TaxID { get; set; }
-        public IEnumerable<Address> Addresses { get; set; }
+        public List<Address> Addresses { get; set; }
     }
 }

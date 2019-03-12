@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace partnertar.Models
 {
-    class Organisation : Partner
+    public class Organisation : Partner
     {
         public long Value { get; set; }
     }

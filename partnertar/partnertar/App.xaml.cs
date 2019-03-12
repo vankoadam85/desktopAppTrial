@@ -1,5 +1,4 @@
 ﻿using partnertar.ViewModels;
-using partnertar.ViewModels.Interfaces;
 using partnertar.Views;
 using System;
 using System.Collections.Generic;
@@ -22,7 +21,6 @@ namespace partnertar
         protected override void OnStartup(StartupEventArgs e)
         {
             _container = new UnityContainer();
-            _container.RegisterType<IPartnersViewModel, PartnersViewModel>();
         }
     }
 }

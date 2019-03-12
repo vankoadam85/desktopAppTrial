@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace partnertar.Models
 {
-    class Address
+    public class Address
     {
         public string AddressType { get; set; }
         public string PostCode { get; set; }
