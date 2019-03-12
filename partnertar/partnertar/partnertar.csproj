@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data Access\Interfaces\IPartnersDataAccess.cs" />
+    <Compile Include="Data Access\Interfaces\IReadData.cs" />
+    <Compile Include="Data Access\PartnersDataAccess.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\Partner.cs" />
@@ -108,8 +111,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Data Access\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
