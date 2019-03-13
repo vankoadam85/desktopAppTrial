@@ -23,12 +23,12 @@ namespace partnertar.Data_Access
             var response = await _client.GetAsync(requestUrl.ToString());
             if (response.IsSuccessStatusCode)
             {
-                return await ResponseToPartnersAsync(response);
+                return await ResponseToPartnerCollectionAsync(response);
             }
             return null;
         }
 
-        private async Task<IEnumerable<Partner>> ResponseToPartnersAsync(HttpResponseMessage response)
+        private async Task<IEnumerable<Partner>> ResponseToPartnerCollectionAsync(HttpResponseMessage response)
         {
             var partners = new List<Partner>();
             var deserializedResponse =  JsonConvert.DeserializeObject<GetPartnersDto>(await response.Content.ReadAsStringAsync());

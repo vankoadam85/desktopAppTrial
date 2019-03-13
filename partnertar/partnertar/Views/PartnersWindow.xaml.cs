@@ -24,7 +24,7 @@ namespace partnertar.Views
         public PartnersWindow(PartnersViewModel viewModel)
         {
             InitializeComponent();
-            viewModel.UpdateAsync();
+            Task.Run(() => viewModel.UpdateAsync());
             DataContext = viewModel;
             BindToViewModel();
         }

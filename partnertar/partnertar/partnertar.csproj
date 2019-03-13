@@ -74,7 +74,6 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\Partner.cs" />
-    <Compile Include="Models\Partners.cs" />
     <Compile Include="Models\PrivatePerson.cs" />
     <Compile Include="ViewModels\Interfaces\IPartnersViewModel.cs" />
     <Compile Include="ViewModels\PartnersViewModel.cs" />
