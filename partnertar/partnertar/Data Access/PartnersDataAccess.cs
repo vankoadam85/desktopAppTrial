@@ -1,4 +1,6 @@
-﻿using partnertar.Data_Access.Interfaces;
+﻿using Newtonsoft.Json;
+using partnertar.Data_Access.Interfaces;
+using partnertar.Dtos;
 using partnertar.Models;
 using System;
 using System.Collections.Generic;
@@ -19,7 +21,20 @@ namespace partnertar.Data_Access
             var requestUrl = new StringBuilder(_serverUrl)
                 .Append("/api/partners");
             var response = await _client.GetAsync(requestUrl.ToString());
-            throw new NotImplementedException();
+            if (response.IsSuccessStatusCode)
+            {
+                return await ResponseToPartnersAsync(response);
+            }
+            return null;
+        }
+
+        private async Task<IEnumerable<Partner>> ResponseToPartnersAsync(HttpResponseMessage response)
+        {
+            var partners = new List<Partner>();
+            var deserializedResponse =  JsonConvert.DeserializeObject<GetPartnersDto>(await response.Content.ReadAsStringAsync());
+            partners.AddRange(deserializedResponse.Organisations);
+            partners.AddRange(deserializedResponse.PrivatePersons);
+            return partners;
         }
 
         public async Task<Partner> GetByIDAsync(long ID)

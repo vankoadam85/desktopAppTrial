@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -67,9 +70,11 @@
     <Compile Include="Data Access\Interfaces\IPartnersDataAccess.cs" />
     <Compile Include="Data Access\Interfaces\IReadData.cs" />
     <Compile Include="Data Access\PartnersDataAccess.cs" />
+    <Compile Include="Dtos\GetPartnersDto.cs" />
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Organisation.cs" />
     <Compile Include="Models\Partner.cs" />
+    <Compile Include="Models\Partners.cs" />
     <Compile Include="Models\PrivatePerson.cs" />
     <Compile Include="ViewModels\Interfaces\IPartnersViewModel.cs" />
     <Compile Include="ViewModels\PartnersViewModel.cs" />
