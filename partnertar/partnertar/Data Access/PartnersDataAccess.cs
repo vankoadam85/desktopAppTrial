@@ -16,11 +16,17 @@ namespace partnertar.Data_Access
 
         public async Task<IEnumerable<Partner>> GetAllAsync()
         {
+            var requestUrl = new StringBuilder(_serverUrl)
+                .Append("/api/partners");
+            var response = await _client.GetAsync(requestUrl.ToString());
             throw new NotImplementedException();
         }
 
         public async Task<Partner> GetByIDAsync(long ID)
         {
+            var requestUrl = new StringBuilder(_serverUrl)
+                .AppendFormat("/api/partners/{0}", ID);
+            var response = await _client.GetAsync(requestUrl.ToString());
             throw new NotImplementedException();
         }
     }
