@@ -1,4 +1,6 @@
-﻿using partnertarServer.Services;
+﻿using partnertarServer.Repositories;
+using partnertarServer.Repositories.Interfaces;
+using partnertarServer.Services;
 using partnertarServer.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,8 @@ namespace partnertarServer.Configurations
         {
             var container = new UnityContainer();
             container.RegisterType<IPartnersService, PartnersService>();
+            container.RegisterType<IOrganisationRepository, OrganisationRepository>();
+            container.RegisterType<IPrivatePersonRepository, PrivatePersonRepository>();
 
             config.DependencyResolver = new UnityResolver(container);
 

@@ -103,6 +103,11 @@
     <Compile Include="Models\Partner.cs" />
     <Compile Include="Models\PrivatePerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Interfaces\IOrganisationRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IPrivatePersonRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IReadRepository.cs" />
+    <Compile Include="Repositories\OrganisationRepository.cs" />
+    <Compile Include="Repositories\PrivatePersonRepository.cs" />
     <Compile Include="Services\Interfaces\IPartnersService.cs" />
     <Compile Include="Services\Interfaces\IReadService.cs" />
     <Compile Include="Services\PartnersService.cs" />
