@@ -94,9 +94,14 @@
     <Compile Include="Configurations\PartnertarServerConfiguration.cs" />
     <Compile Include="Configurations\UnityResolver.cs" />
     <Compile Include="Controllers\PartnersController.cs" />
+    <Compile Include="Dtos\GetPartnersDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\Organisation.cs" />
+    <Compile Include="Models\Partner.cs" />
+    <Compile Include="Models\PrivatePerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\IPartnersService.cs" />
     <Compile Include="Services\Interfaces\IReadService.cs" />
