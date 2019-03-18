@@ -1,7 +1,9 @@
-﻿using partnertarServer.Models;
+﻿using partnertarServer.Data;
+using partnertarServer.Models;
 using partnertarServer.Repositories.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
@@ -10,9 +12,16 @@ namespace partnertarServer.Repositories
 {
     public class PartnerRepository : IPartnerRepository
     {
-        public Task<IEnumerable<Partner>> GetAllAsync()
+        private readonly PartnertarContext _context;
+
+        public PartnerRepository(PartnertarContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
+        }
+
+        public async Task<IEnumerable<Partner>> GetAllAsync()
+        {
+            return await _context.Partners.ToListAsync();
         }
 
         public Task<Partner> GetByIDAsync(long ID)

@@ -1,4 +1,5 @@
-﻿using partnertarServer.Services.Interfaces;
+﻿using Newtonsoft.Json;
+using partnertarServer.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace partnertarServer.Controllers
         [Route("")]
         public string Get()
         {
-            return "Hello World!";
+            return JsonConvert.SerializeObject(_service.GetAllAsync());
         }
     }
 }

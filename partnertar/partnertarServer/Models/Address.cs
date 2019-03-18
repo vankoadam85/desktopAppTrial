@@ -8,6 +8,7 @@ namespace partnertarServer.Models
 {
     public class Address
     {
+        public long ID { get; set; }
         public string AddressType { get; set; }
         public string PostCode { get; set; }
         public string City { get; set; }

@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace partnertarServer.Services.Interfaces
 {
-    public interface IReadService<T, U> where T : class where U : class
+    public interface IReadService<T> where T : class
     {
         Task<T> GetByIDAsync(long ID);
 
-        Task<U> GetAllAsync();
+        Task<IEnumerable<T>> GetAllAsync();
     }
 }

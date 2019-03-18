@@ -1,4 +1,5 @@
-﻿using partnertarServer.Repositories;
+﻿using partnertarServer.Data;
+using partnertarServer.Repositories;
 using partnertarServer.Repositories.Interfaces;
 using partnertarServer.Services;
 using partnertarServer.Services.Interfaces;
@@ -18,6 +19,7 @@ namespace partnertarServer.Configurations
             var container = new UnityContainer();
             container.RegisterType<IPartnersService, PartnersService>();
             container.RegisterType<IPartnerRepository, PartnerRepository>();
+            container.RegisterType<PartnertarContext>();
 
             config.DependencyResolver = new UnityResolver(container);
 

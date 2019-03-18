@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace partnertarServer.Services.Interfaces
 {
-    public interface IPartnersService : IReadService<Partner, GetPartnersDto>
+    public interface IPartnersService : IReadService<Partner>
     {
     }
 }

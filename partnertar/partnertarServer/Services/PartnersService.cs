@@ -1,5 +1,6 @@
 ﻿using partnertarServer.Dtos;
 using partnertarServer.Models;
+using partnertarServer.Repositories.Interfaces;
 using partnertarServer.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,16 @@ namespace partnertarServer.Services
 {
     public class PartnersService : IPartnersService
     {
-        public Task<GetPartnersDto> GetAllAsync()
+        private readonly IPartnerRepository _repository;
+
+        public PartnersService(IPartnerRepository repository)
         {
-            throw new NotImplementedException();
+            _repository = repository;
+        }
+
+        public async Task<IEnumerable<Partner>> GetAllAsync()
+        {
+            return await _repository.GetAllAsync();
         }
 
         public Task<Partner> GetByIDAsync(long ID)

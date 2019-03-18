@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace partnertarServer.Repositories.Interfaces
 {
-    interface IPartnerRepository : IReadRepository<Partner>
+    public interface IPartnerRepository : IReadRepository<Partner>
     {
     }
 }
