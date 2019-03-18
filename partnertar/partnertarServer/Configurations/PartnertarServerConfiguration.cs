@@ -17,8 +17,7 @@ namespace partnertarServer.Configurations
         {
             var container = new UnityContainer();
             container.RegisterType<IPartnersService, PartnersService>();
-            container.RegisterType<IOrganisationRepository, OrganisationRepository>();
-            container.RegisterType<IPrivatePersonRepository, PrivatePersonRepository>();
+            container.RegisterType<IPartnerRepository, PartnerRepository>();
 
             config.DependencyResolver = new UnityResolver(container);
 

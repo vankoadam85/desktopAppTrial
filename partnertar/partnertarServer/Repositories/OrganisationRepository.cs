@@ -8,14 +8,14 @@ using System.Web;
 
 namespace partnertarServer.Repositories
 {
-    public class OrganisationRepository : IOrganisationRepository
+    public class PartnerRepository : IPartnerRepository
     {
-        public Task<IEnumerable<Organisation>> GetAllAsync()
+        public Task<IEnumerable<Partner>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<Organisation> GetByIDAsync(long ID)
+        public Task<Partner> GetByIDAsync(long ID)
         {
             throw new NotImplementedException();
         }
