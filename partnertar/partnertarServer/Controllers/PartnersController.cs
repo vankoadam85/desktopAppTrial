@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace partnertarServer.Controllers
@@ -21,9 +22,9 @@ namespace partnertarServer.Controllers
 
         [HttpGet]
         [Route("")]
-        public string Get()
+        public async Task<string> GetAsync()
         {
-            return JsonConvert.SerializeObject(_service.GetAllAsync());
+            return JsonConvert.SerializeObject( await _service.GetAllAsync());
         }
     }
 }

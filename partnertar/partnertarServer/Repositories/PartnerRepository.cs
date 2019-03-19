@@ -21,7 +21,7 @@ namespace partnertarServer.Repositories
 
         public async Task<IEnumerable<Partner>> GetAllAsync()
         {
-            return await _context.Partners.ToListAsync();
+            return await _context.Partners.Include(p => p.Addresses).ToListAsync();
         }
 
         public Task<Partner> GetByIDAsync(long ID)
